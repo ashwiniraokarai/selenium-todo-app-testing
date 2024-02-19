@@ -24,10 +24,10 @@ public class SeleniumWrapper {
     }
 
     public WebElement getWebElementFor(By selector){
-        return driver.findElement(ToDoPageSelectors.TODO_INPUTBOX());
+        return driver.findElement(selector);
     }
 
     public List<WebElement> getWebElementsFor(By selector){
-        return driver.findElements(ToDoPageSelectors.LIST_OF_TODO_ITEMS());
+        return driver.findElements(selector);
     }
 }
