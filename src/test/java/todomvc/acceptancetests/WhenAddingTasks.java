@@ -39,5 +39,15 @@ public class WhenAddingTasks {
     public void addingMultipleTasks() {
         // Add "Feed The Cat" and "Walk the dog" to the list
         // Check that they all appear in the list
+
+        toDoPage.openToDoApp();
+        toDoPage.addItem("Feed the cat");
+        toDoPage.addItem("Walk the dog");
+
+        toDoPage.addItems("Feed the cat", "Walk the dog");
+
+        Assertions.assertThat(toDoPage.listOfTextsOfToDoItems())
+                                                                    .contains("Feed the cat")
+                                                                    .contains("Walk the dog");
     }
 }

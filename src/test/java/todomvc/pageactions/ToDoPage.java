@@ -30,4 +30,10 @@ public class ToDoPage extends SeleniumWrapper {
                 .map(toDoItem -> toDoItem.getText())
                 .collect(Collectors.toList());
     }
+
+    public void addItems(String... texts) {
+        for(String text: texts){
+            addItem(text);
+        }
+    }
 }
