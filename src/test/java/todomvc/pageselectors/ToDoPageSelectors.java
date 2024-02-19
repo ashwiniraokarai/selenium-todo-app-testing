@@ -20,4 +20,12 @@ public class ToDoPageSelectors {
     public static By LIST_OF_TODO_ITEMS() {
         return By.cssSelector("ul.todo-list li");
     }
+
+    public static By TODO_ITEM_CHECKBOX(String text) {
+        return By.xpath("//ul[@class='todo-list']//label[text()='"+text+"']/preceding-sibling::input[@type='checkbox']");
+    }
+
+    public static By FILTER_LINK(String linkText) {
+        return By.xpath("//a[text()='"+linkText+"']");
+    }
 }

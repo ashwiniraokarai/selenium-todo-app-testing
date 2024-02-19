@@ -19,7 +19,7 @@ public class ToDoPage extends SeleniumWrapper {
         openPage("https://todomvc.com/examples/angular/dist/browser/#/all");
     }
 
-    public void addItem(String toDoText) {
+    public void addItemCalled(String toDoText) {
         //With call to a static  method, that returns a By Object
         getWebElementFor(ToDoPageSelectors.TODO_INPUTBOX()).sendKeys(toDoText);
         getWebElementFor(ToDoPageSelectors.TODO_INPUTBOX()).sendKeys(Keys.RETURN);
@@ -31,9 +31,19 @@ public class ToDoPage extends SeleniumWrapper {
                 .collect(Collectors.toList());
     }
 
-    public void addItems(String... texts) {
+    public void addItemsCalled(String... texts) {
         for(String text: texts){
-            addItem(text);
+            addItemCalled(text);
         }
+    }
+
+    public void completeItemWith(String text) {
+        //click on the checkbox associated the todo item to complete
+        getWebElementFor(ToDoPageSelectors.TODO_ITEM_CHECKBOX(text)).click();
+    }
+
+    public void filterBy(String linkText) {
+        //click on the filter
+        getWebElementFor(ToDoPageSelectors.FILTER_LINK(linkText)).click();
     }
 }
