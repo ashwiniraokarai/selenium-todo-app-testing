@@ -29,7 +29,7 @@ public class WhenAddingTasks {
         // Check that "Feed The Cat" appears in the list
 
         toDoPage.openToDoApp();
-        toDoPage.addItem("Feed the cat");
+        toDoPage.addItemCalled("Feed the cat");
 
         Assertions.assertThat(toDoPage.listOfTextsOfToDoItems()).contains("Feed the cat");
     }
@@ -41,13 +41,9 @@ public class WhenAddingTasks {
         // Check that they all appear in the list
 
         toDoPage.openToDoApp();
-        toDoPage.addItem("Feed the cat");
-        toDoPage.addItem("Walk the dog");
-
-        toDoPage.addItems("Feed the cat", "Walk the dog");
+        toDoPage.addItemsCalled("Feed the cat", "Walk the dog");
 
         Assertions.assertThat(toDoPage.listOfTextsOfToDoItems())
-                                                                    .contains("Feed the cat")
-                                                                    .contains("Walk the dog");
+                                                                    .containsExactly("Feed the cat", "Walk the dog");
     }
 }
