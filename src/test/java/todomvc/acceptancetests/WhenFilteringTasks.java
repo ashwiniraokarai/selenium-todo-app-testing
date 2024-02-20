@@ -23,21 +23,10 @@ When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the
 When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "All", you should all the items
 *
 * */
-public class WhenFilteringTasks {
+public class WhenFilteringTasks extends BaseTest{
+    // Set up and tear down methods offloaded to a BaseTest which manages driver object and page object
 
-    private WebDriver driver;
-    private ToDoPage toDoPage;
-
-    @BeforeEach
-    public void setUp(){
-        driver = new ChromeDriver();
-        toDoPage = new ToDoPage(driver);
-    }
-
-    @AfterEach
-    public void tearDown(){
-        driver.quit();
-    }
+    // TODO: Exercise 6
 
     @ParameterizedTest(name="Complete task: {0},Filter by {1}, See tasks: {2}")
     @MethodSource("testDataProvider")

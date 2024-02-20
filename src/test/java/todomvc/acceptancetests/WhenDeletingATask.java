@@ -8,20 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import todomvc.pageactions.ToDoPage;
 
-public class WhenDeletingATask {
-    private ToDoPage toDoPage;
-    private WebDriver driver;
-
-    @BeforeEach
-    public void setUp(){
-        driver = new ChromeDriver();
-        toDoPage = new ToDoPage(driver);
-    }
-    
-    @AfterEach
-    public void tearDown(){
-        driver.quit();
-    }
+public class WhenDeletingATask extends BaseTest{
+    // Set up and tear down methods offloaded to a BaseTest which manages driver object and page object
 
     // TODO: Exercise 5
     @Test
