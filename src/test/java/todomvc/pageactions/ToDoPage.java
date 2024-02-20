@@ -37,7 +37,7 @@ public class ToDoPage extends SeleniumWrapper {
         }
     }
 
-    public void completeItemWith(String text) {
+    public void completeItemCalled(String text) {
         //click on the checkbox associated the todo item to complete
         getWebElementFor(ToDoPageSelectors.TODO_ITEM_CHECKBOX(text)).click();
     }
@@ -45,5 +45,11 @@ public class ToDoPage extends SeleniumWrapper {
     public void filterBy(String linkText) {
         //click on the filter
         getWebElementFor(ToDoPageSelectors.FILTER_LINK(linkText)).click();
+    }
+
+    public void removeItemCalled(String text) {
+        //Click the todo item to fake a hover and get the destroy button to appear and stay
+        getWebElementFor(ToDoPageSelectors.TODO_ITEM(text)).click();
+        getWebElementFor(ToDoPageSelectors.DESTROY_BUTTON(text)).click();
     }
 }

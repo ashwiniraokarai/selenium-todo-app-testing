@@ -33,7 +33,7 @@ public class WhenCompletingATask {
 
         toDoPage.openToDoApp();
         toDoPage.addItemsCalled("Feed the cat", "Walk the dog");
-        toDoPage.completeItemWith("Feed the cat");
+        toDoPage.completeItemCalled("Feed the cat");
         toDoPage.filterBy("Active");
 
         Assertions.assertThat(toDoPage.listOfTextsOfToDoItems()).containsExactly("Walk the dog");
@@ -49,7 +49,7 @@ public class WhenCompletingATask {
 
         toDoPage.openToDoApp();
         toDoPage.addItemsCalled("Feed the cat", "Walk the dog");
-        toDoPage.completeItemWith("Feed the cat");
+        toDoPage.completeItemCalled("Feed the cat");
         toDoPage.filterBy("Completed");
 
         Assertions.assertThat(toDoPage.listOfTextsOfToDoItems()).containsExactly("Feed the cat");

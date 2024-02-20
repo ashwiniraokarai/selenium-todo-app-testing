@@ -28,4 +28,12 @@ public class ToDoPageSelectors {
     public static By FILTER_LINK(String linkText) {
         return By.xpath("//a[text()='"+linkText+"']");
     }
+
+    public static By DESTROY_BUTTON(String text) {
+        return By.xpath("//ul[@class ='todo-list']//label[text()='" + text + "']/following-sibling::button[@class='destroy']");
+    }
+
+    public static By TODO_ITEM(String text) {
+        return By.xpath("//ul[@class ='todo-list']//label[text()='" + text + "']");
+    }
 }
