@@ -4,11 +4,13 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import todomvc.pageactions.ToDoPage;
 
-public class WhenAddingTasks extends BaseTest {
+public class WhenAddingTasks  extends BaseTest{
     // Set up and tear down methods offloaded to a BaseTest which manages driver object and page object
 
     // TODO: Exercise 1
